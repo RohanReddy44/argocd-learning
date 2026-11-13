@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: redis
+  tag: "7.4"          # avoid :latest, it makes deploys non-reproducible
+  pullPolicy: IfNotPresent
+
+service:
+  port: 7777          # port exposed by the Service
+  targetPort: 6379    # Redis container port
+
+resources: {}
